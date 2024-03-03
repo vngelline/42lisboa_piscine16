@@ -6,14 +6,16 @@
 /*   By: vngelline <vngelline@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 09:37:21 by vngelline         #+#    #+#             */
-/*   Updated: 2024/03/03 13:31:56 by vngelline        ###   ########.fr       */
+/*   Updated: 2024/03/03 15:01:51 by vngelline        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+//#include "ft_putchar.c"
+
+void	ft_putchar(char c);
 
 int check_errors(int y_count, int x_count)
 {
