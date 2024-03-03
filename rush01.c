@@ -13,38 +13,36 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-//#include "ft_putchar.c"
 
 void	ft_putchar(char c);
 
-int check_errors(int y_count, int x_count)
+int	check_errors(int y_count, int x_count)
 {
-    if ((y_count <= 0) || (y_count >= 6) || (x_count <= 0) || (x_count >= 6))
-        fprintf( stdout, "Please enter numbers between 1 and 5\n" );
-        return 1;
+	if ((y_count <= 0) || (y_count >= 6) || (x_count <= 0) || (x_count >= 6))
+		fprintf(stdout, "Please enter numbers between 1 and 5\n" );
+	return (1);
 }
 
-void    print_char(int y_count, int x_count, int x, int y)
+void	print_char(int y_count, int x_count, int x, int y)
 {
-    if (((x == 1) && (y == 1)) || ((x == x_count) && (y == y_count)))
+	if (((x == 1) && (y == 1)) || ((x == x_count) && (y == y_count)))
 		ft_putchar('/');
-    else if (((x == x_count) && (y == 1)) || ((y == y_count) && (x == 1)))
+	else if (((x == x_count) && (y == 1)) || ((y == y_count) && (x == 1)))
 		ft_putchar('\\');
-    else if ((((1 < y) && (y < y_count)) && ((x == 1) || (x == x_count))))
-        ft_putchar('*');
-    else if ((((1 < x) && (x < x_count)) && ((y == 1) || (y == y_count))))
-        ft_putchar('*');
-    else
-        ft_putchar(' ');
+	else if ((((1 < y) && (y < y_count)) && ((x == 1) || (x == x_count))))
+		ft_putchar('*');
+	else if ((((1 < x) && (x < x_count)) && ((y == 1) || (y == y_count))))
+		ft_putchar('*');
+	else
+		ft_putchar(' ');
 }
 
 void	rush(int y_count, int x_count)
 {
-    check_errors(y_count, x_count);
-    
 	int	x;
 	int	y;
 
+	check_errors(y_count, x_count);
 	x = 1;
 	y = 1;
 	while (x <= x_count)
@@ -52,10 +50,11 @@ void	rush(int y_count, int x_count)
 		while (y <= y_count)
 		{
 			print_char(y_count, x_count, x, y);
-            y++;
+			y++;
 		}
-        ft_putchar('\n');
-        x++;
-        y=1;
+		ft_putchar('\n');
+		x++;
+		y = 1;
 	}
 }
+
