@@ -6,19 +6,45 @@
 /*   By: vngelline <vngelline@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 09:37:21 by vngelline         #+#    #+#             */
-/*   Updated: 2024/03/02 18:12:03 by vngelline        ###   ########.fr       */
+/*   Updated: 2024/03/03 10:38:45 by vngelline        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
+int check_errors(int y_count, int x_count)
+{
+    if ((y_count <= 0) || (y_count >= 6) || (x_count <= 0) || (x_count >= 6))
+        fprintf( stdout, "Please enter numbers between 1 and 5\n" );
+        return 1;
+}
+
+void    print_char(int y_count, int x_count, int x, int y)
+{
+    if (((x == 1) && (y == 1)) || ((x == x_count) && (y == y_count)))
+		ft_putchar('/');
+    else if (((x == x_count) && (y == 1)) || ((y == y_count) && (x == 1)))
+		ft_putchar('\\');
+    else if ((((1 < y) && (y < y_count)) && ((x == 1) || (x == x_count))))
+        ft_putchar('*');
+    else if ((((1 < x) && (x < x_count)) && ((y == 1) || (y == y_count))))
+        ft_putchar('*');
+    else
+        ft_putchar(' ');
+}
+
 void	rush(int y_count, int x_count)
 {
+    check_errors(y_count, x_count);
+    
 	int	x;
 	int	y;
 
@@ -28,16 +54,7 @@ void	rush(int y_count, int x_count)
 	{
 		while (y <= y_count)
 		{
-			if (((x == 1) && (y == 1)) || ((x == x_count) && (y == y_count)))
-			    ft_putchar('/');
-            else if (((x == x_count) && (y == 1)) || ((y == y_count) && (x == 1)))
-			    ft_putchar('\\');
-            else if ((((1 < y) && (y < y_count)) && ((x == 1) || (x == x_count))))
-                ft_putchar('*');
-            else if ((((1 < x) && (x < x_count)) && ((y == 1) || (y == y_count))))
-                ft_putchar('*');
-            else
-                ft_putchar(' ');
+			print_char(y_count, x_count, x, y);
             y++;
 		}
         ft_putchar('\n');
