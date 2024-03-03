@@ -10,13 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//void rush(int x, int y);
+void	ft_putchar(char c);
+void	rush(int y_count, int x_count);
 
-void    ft_putchar(char c);
-void    rush(int y_count, int x_count);
-
-int main(void) 
+int	main(void)
 {
-    rush(5,3);
-    return (0);
+	rush(5, 3);
+	return (0);
 }
