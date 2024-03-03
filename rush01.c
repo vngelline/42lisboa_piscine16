@@ -6,7 +6,7 @@
 /*   By: vngelline <vngelline@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 09:37:21 by vngelline         #+#    #+#             */
-/*   Updated: 2024/03/03 10:38:45 by vngelline        ###   ########.fr       */
+/*   Updated: 2024/03/03 13:31:56 by vngelline        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
 int check_errors(int y_count, int x_count)
 {
@@ -61,10 +56,4 @@ void	rush(int y_count, int x_count)
         x++;
         y=1;
 	}
-}
-
-int main(void) 
-{
-    rush(5,3);
-    return (0);
 }
