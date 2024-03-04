@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newfile.c                                          :+:      :+:    :+:   */
+/*   somefile.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vngelline <vngelline@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 09:37:21 by vngelline         #+#    #+#             */
-/*   Updated: 2024/03/04 14:08:00 by vngelline        ###   ########.fr       */
+/*   Updated: 2024/03/04 20:53:08 by vngelline        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putchar(char c) {
-  write(1, &c, 1);
-}
-
-int main(void) {
-  ft_putchar('c');
+int main(void) 
+{
+    char ch;
+    ch = 'a';
+    while (ch <= 'z')
+    {
+        write(1, &ch, 1);
+        ch++;
+    }
 }
